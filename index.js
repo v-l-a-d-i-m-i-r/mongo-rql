@@ -112,8 +112,7 @@ parse.operators = {
 	}),
 
 	match: path(function (prop, value) {
-		// TODO: use $regex if/when needed
-		this.criteria[ prop ] = value;
+		this.criteria[ prop ] = { $regex: value, $options: 'i' };
 	})
 };
 
